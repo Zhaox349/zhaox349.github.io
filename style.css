@@ -1,7 +1,15 @@
-html {
-  background: orange;
+
+html{
+	background: #FFCC22 ;
 }
 
-h1 {
-  color:black;
+body{
+	margin:6rem;
 }
+
+
+.container {
+	padding:128px 16px;
+}
+
+

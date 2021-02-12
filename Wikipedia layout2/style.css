@@ -1,0 +1,106 @@
+
+
+
+html {
+  font-size: 1rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: #FFF;
+  background-color: #000;
+}
+
+main {
+  display:grid;
+  grid-template-columns: 7fr 400px 2fr;
+  grid-row: 1fr 1fr 1fr;
+  grid-gap:2rem;
+  max-width: 80vw;
+  margin-left: 60px;
+  margin-top: 15px;
+  margin-right: 60px;
+
+}
+
+
+
+.title {
+  grid-column: 3;
+  grid-row:1;
+}
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.pull-quote {
+  grid-column:3 ;
+  grid-row:1;
+  font-size: 2rem;
+  font-family: 'Stalinist One', cursive;
+  line-height: 1.5;
+  font-weight:300;
+  
+}
+
+.article {
+  grid-column:2 ;
+  grid-row:1 ;
+  font-size: .8rem;
+  border:2px solid blue;
+  text-align: center;
+  padding: 5px;
+
+}
+
+
+
+.article-2 {
+  grid-column:3 / 9;
+  grid-row:4 / 7;
+}
+
+.article-3 {
+  grid-column:3 / 5;
+  grid-row:3;
+  font-size:.8rem;
+}
+.subheading{
+  grid-column:2 ;
+  grid-row:2 ;
+}
+.article-2 {
+  grid-column:2 / 5;
+  grid-row:2;
+  font-size:.8rem;
+  width: 800px;
+}
+
+.menu {
+  grid-column:1 ;
+  grid-row:1;
+}
+
+
+
+a {
+  font-size:4rem;
+  font-weight:700;
+  font-style: italic;
+  font-family: 'Stalinist One', cursive;
+  color: #0000FF;
+
+}
+
+
+
+
+h3 {
+  font-size:2rem;
+  font-weight:400;
+
+}
+h4 {
+  font-size:1rem;
+}
+
+
+

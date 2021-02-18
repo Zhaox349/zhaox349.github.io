@@ -56,10 +56,6 @@ background-color: black;
  	text-align: center;
 }
 
-.aside-1 {
-  background: gold;
-}
-
 
 @media all and (min-width: 600px) {
   .aside { flex: 1 0 0; }
@@ -67,7 +63,7 @@ background-color: black;
 
 @media all and (min-width: 800px) {
   .main    { flex: 20px; }
-  .aside-1 { order: 1; } 
+  .aside-1 { order: 1; }
   .main    { order: 2; }
   .aside-2 { order: 3; }
   .footer  { order: 4; }

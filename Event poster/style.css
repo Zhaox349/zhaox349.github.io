@@ -1,0 +1,78 @@
+body {
+background-color: black;
+
+}
+
+@font-face {    
+    font-family: 'metropolis_regularregular';
+    src: url('./Typeface/metropolis_regular-webfont.woff2') format('woff2'),
+         url('./Typeface/metropolis_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.header {
+	color:white;
+ 	font-size: 100px;
+ 	letter-spacing: 0px;
+ 	line-height: 1;
+ 	font-family: 'metropolis_regularregular';
+ 	color:#FFF;
+ 	text-align: center;
+}
+
+
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+
+.footer {
+ 	font-size: 100px;
+ 	letter-spacing: 0px;
+ 	line-height: 1;
+ 	font-family: 'metropolis_regularregular';
+ 	color:#FFF;
+ 	text-align: center;
+}
+
+.main {
+ 	text-align: center;
+	color:white;
+ 	font-size: 20px;
+ 	letter-spacing: 0px;
+ 	line-height: 1;
+ 	font-family: 'metropolis_regularregular';
+ 	color:#FFF;
+ 	text-align: center;
+}
+
+.aside-1 {
+  background: gold;
+}
+
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 20px; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+body {
+  padding: 2em; 
+}

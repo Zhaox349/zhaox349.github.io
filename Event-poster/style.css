@@ -30,6 +30,7 @@ background-color: black;
   animation: color 5s infinite alternate,fade 5s ease-in infinite alternate-reverse;
 }
 
+
 @keyframes spin{
   0% {
     transform:rotate(0);
@@ -105,9 +106,13 @@ background-color: black;
   .footer  { order: 4; }
 }
 
-.aside-1 {
+.aside-1  {
   display: inline-block;
   animation: rotate 15s linear infinite;
+}
+.aside-2  {
+  display: inline-block;
+  animation: rotate_ 15s linear infinite;
 }
 
 @keyframes rotate {
@@ -116,6 +121,10 @@ background-color: black;
   }
 }
 
+@keyframes rotate_ {
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 

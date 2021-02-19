@@ -90,7 +90,10 @@ background-color: black;
  	line-height: 1;
  	font-family: 'metropolis_regularregular';
  	color:#FFF;
- 	text-align: center;
+ 	align-items: center;
+  justify-content: center;
+  border: 10px solid #D1AD70;
+  margin-top: 30px;
 }
 
 
@@ -109,21 +112,31 @@ background-color: black;
 .aside-1  {
   display: inline-block;
   animation: rotate 15s linear infinite;
+  align-items: center;
+  justify-content: center;
 }
 .aside-2  {
   display: inline-block;
   animation: rotate_ 15s linear infinite;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes rotate {
-  to {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
     transform: rotate(360deg);
   }
 }
 
 @keyframes rotate_ {
-  to {
-    transform: rotate(-360deg);
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 

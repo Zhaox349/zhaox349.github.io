@@ -1,0 +1,37 @@
+body {
+  background-color: black;
+  
+}
+
+
+#Rainbow {
+	width: 500px;
+  height:500px;
+  position: absolute;
+  left:0;
+  animation:move 3s ease 0s infinite alternate;
+  -webkit-animation: move 3s ease 0s infinite alternate;
+}
+
+@keyframes move{
+  from{
+    left:0;
+  }
+  to{
+    left:1000px;
+  }
+}
+
+@-webkit-keyframes move{
+  from{
+    left:0;
+  }
+  to{
+    left:1000px;
+  }
+}
+
+#Rainbow:hover {
+  animation-play-state: paused;
+  cursor:pointer;
+}

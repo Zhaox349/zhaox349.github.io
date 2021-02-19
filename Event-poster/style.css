@@ -78,8 +78,19 @@ background-color: black;
  	font-family: 'metropolis_regularregular';
  	color:#FFF;
  	text-align: center;
+  display:inline-block;
+  animation: scroll 5s linear infinite;
 }
 
+@keyframes scroll {
+  from {
+    transform: translateX(500px);
+  }
+  to {
+    transform: translateX(-100%); 
+  }
+ 
+}
 
 
 .main {

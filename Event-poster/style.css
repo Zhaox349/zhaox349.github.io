@@ -1,6 +1,7 @@
 body {
 background-color: black;
 
+
 }
 
 @font-face {    
@@ -20,6 +21,39 @@ background-color: black;
  	font-family: 'metropolis_regularregular';
  	color:#FFF;
  	text-align: center;
+  animation: spin 4s infinite ease;
+}
+
+.header:hover {
+  animation-play-state: paused;
+  cursor:pointer;
+  animation: color 5s infinite alternate,fade 5s ease-in infinite alternate-reverse;
+}
+
+@keyframes spin{
+  0% {
+    transform:rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+
+}
+
+@keyframes color {
+  0% {background-color: black;}
+  40% {background-color: #91D4CF}
+  70% {background-color: #87CCB0}
+  100% {background-color: #D1AD70}
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 
@@ -45,6 +79,8 @@ background-color: black;
  	text-align: center;
 }
 
+
+
 .main {
  	text-align: center;
 	color:white;
@@ -69,6 +105,25 @@ background-color: black;
   .footer  { order: 4; }
 }
 
+.aside-1 {
+  display: inline-block;
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+}
+
+
 body {
   padding: 2em; 
 }
+
+
+
+
+

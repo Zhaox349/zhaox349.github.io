@@ -1,0 +1,145 @@
+body {
+	background-color: black;
+	font-family: hero-new, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+main{
+  display: grid;
+  grid-template-columns:1fr auto 1fr;
+  grid-template-rows: 200px 400px 200px; 
+  grid-gap: 1rem;
+ 
+}
+
+.title{
+	grid-column: 2;
+	grid-row:1;
+	color: white;
+	font-size: 60px;
+	font-weight: 700;
+	font-style: normal;
+	text-align:center;
+}
+
+.header{
+	color:white;
+	grid-column:2;
+	grid-row:3;
+	font-size: 50px;
+	font-weight: 400;
+	text-align:center;
+}
+
+#Question_mark {
+	width: 200px;
+ 	height:200px;
+	grid-column: 1;
+	grid-row: 1;
+	align-self: center;
+	
+}
+
+#Question_mark circle{
+	animation: colorSwap 4s infinite alternate;
+}
+
+
+@keyframes colorSwap {
+	0% {
+		fill: default;
+	}
+	50% {
+		fill: #FFDFAC;
+	}
+
+	100% {
+		fill:#FFD289;
+	}
+}
+
+
+#Period {
+	width: 200px;
+ 	height:200px;
+	grid-column: 3;
+	grid-row: 1;
+	align-self: center;
+	
+}
+
+
+#Period circle{
+	animation: color 4s infinite alternate;
+}
+
+
+@keyframes color {
+	0% {
+		fill: default;
+	}
+	50% {
+		fill: #FFDFAC;
+	}
+
+	100% {
+		fill:#FFD289;
+	}
+}
+
+#Comma {
+	width: 200px;
+ 	height:200px;
+	grid-column: 1;
+	
+}
+
+
+#Comma circle{
+	animation: changecolor 4s infinite alternate;
+}
+
+@keyframes changecolor {
+	0% {
+		fill: default;
+	}
+	50% {
+		fill: #FFDFAC;
+	}
+
+	100% {
+		fill:#FFD289;
+	}
+}
+
+#Apostrophe{
+	width: 200px;
+ 	height:200px;
+	grid-column: 3;
+	grid-row:3;
+}
+
+
+#Apostrophe circle{
+	animation: Color 4s infinite alternate;
+}
+
+@keyframes Color {
+	0% {
+		fill: default;
+	}
+	50% {
+		fill: #FFDFAC;
+	}
+
+	100% {
+		fill:#FFD289;
+	}
+}
+
+
+
+
+
+

@@ -140,6 +140,47 @@ main{
 
 
 
+.left-top {
+	grid-column: 1;
+    grid-row: 1;
+}
+.right-top {
+	grid-column: 3;
+    grid-row: 1;
+}
+.left-bottom {
+	grid-column: 1;
+    grid-row: 3;
+}
+.right-bottom {
+	grid-column: 3;
+    grid-row: 3;
+}
+.middle {
+	grid-column: 2;
+	grid-row: 2;
+	position: relative;
+}
+
+#chinese-wen,#chinese-yin,#chinese-ju,#chinese-dou {
+	opacity: 0;
+	position: absolute;
+	top:0;
+	margin: 0 auto;
+}
+
+.show{
+	animation: fadeIn 3s infinite alternate;
+}
 
 
+@keyframes fadeIn {
+	0% {
+		display: block;
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 

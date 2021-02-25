@@ -94,10 +94,12 @@ article{
 .content {
 	grid-column: 2;
 	grid-row: 2;
-	font-size: 20px;
-	box-shadow:3px 3px #FFD289;
-	background-color: #FFF1DA;
+	font-size: 18px;
+	border:.5px #AAAAAA solid;
+	color:white;
+	line-height: 26px;
 	padding:20px 20px 20px 20px;
+	
 }
 
 .page-left {

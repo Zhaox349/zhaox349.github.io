@@ -5,13 +5,15 @@ body {
 	font-style: normal;
 }
 
+
 main{
   display: grid;
   grid-template-columns:1fr auto 1fr;
-  grid-template-rows: 200px 400px 200px; 
+  grid-template-rows: 200px 350px 200px; 
   grid-gap: 1rem;
- 
+
 }
+
 
 .title{
 	grid-column: 2;

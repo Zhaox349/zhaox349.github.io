@@ -1,10 +1,11 @@
 body{
-	background-color: #FFF5E5;
+	background-color: black;
 	display: grid;
 	grid-template-columns: repeat (10,1fr); 
 	grid-template-rows: repeat (5,1fr); 
 	height: 760px;
 	overflow: hidden;
+	margin-top: 0;
 }
 
 h1 {
@@ -13,6 +14,7 @@ h1 {
 	font-style: normal;
 	font-size: 54px;
 	text-align:center;
+	color:#FFDFAC;
 }
 
 a,h2 {
@@ -20,6 +22,7 @@ a,h2 {
 	font-weight: 700;
 	font-style: normal;
 	font-size: 30px;
+	color:#FFDFAC;
 }
 a {
 	text-decoration: none;
@@ -31,6 +34,9 @@ a:link,a:visited,a:hover,a:active{
 	font-size: 30px;
 }
 
+h3{
+	font-size:100px;
+}
 
 article{
 	grid-column: 2;
@@ -50,22 +56,21 @@ article{
 	float: right;
 	width: 40px;
 	overflow: hidden;
-	font-size: 36px;
+	font-size: 25px;
 	writing-mode:tb-rl;
-	line-height: 64px;
-    padding-left: 30px;
-	border-left: #333333 solid 2px;
+	line-height: 36px;
+    padding-left: 36px;
 	white-space: nowrap;
 }
 
 .show1 {
-	animation: moveUp 20s 0.6s linear infinite;
+	animation: moveUp 30s 0.6s linear infinite;
 }
 .show2 {
-	animation: moveUp 30s 0.6s linear infinite;
+	animation: moveUp 40s 0.6s linear infinite;
 }
 .show3 {
-	animation: moveUp 30s 0.6s linear infinite;
+	animation: moveUp 40s 0.6s linear infinite;
 }
 
 
@@ -84,10 +89,15 @@ article{
 .title {
 	grid-row: 1;
 	grid-column: 2;
+	height:130px;
 }
 .content {
 	grid-column: 2;
 	grid-row: 2;
+	font-size: 20px;
+	box-shadow:3px 3px #FFD289;
+	background-color: #FFF1DA;
+	padding:20px 20px 20px 20px;
 }
 
 .page-left {
@@ -95,10 +105,25 @@ article{
 	grid-row: 3;
 	grid-column: 1;
 	text-align: center;
+	color:black;
 }
 .page-right {
 	grid-row: 3;
 	grid-column: 3;
 	width: 100px;
 	text-align: center;
+}
+.page-bottom {
+	grid-row: 2;
+	grid-column: 3;
+	width: 100px;
+	text-align: center;
+	align-self: center;
+	padding-left: 10px;
+}
+.line-box{
+	float: right;
+	width: 80px;
+	border-left: 1px #AAAAAA solid;
+	color:#FFF1DA;
 }

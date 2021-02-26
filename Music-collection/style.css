@@ -3,6 +3,7 @@ html {
   font-size: 1rem;
   font-family: 'Lora', serif;
   background-color: black;
+  color:white;
 }
 
 body {
@@ -10,19 +11,40 @@ body {
   color:#000;
 }
 
-a,b {
-  text-decoration: underline;
-  color: white;
+
+.navigation {
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
-a:hover {
-  text-decoration: none;
-  color: red;
+.mood {
+    text-decoration: underline;
+    color: white;
+    font-size:20px;
+    font-family: 'Lora', serif;
+    font-weight: 300;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
 }
 
-b:hover {
+#moodbooster,#sad,#summervibe:{
+  color:white;
+}
+
+#moodbooster:hover{
   text-decoration: none;
-  color: blue;
+  background-color: orange;
+}
+
+#sad:hover{
+  text-decoration: none;
+  background-color: blue;
+}
+
+#summervibe:hover {
+  text-decoration: none;
+  background-color: yellow;
 }
 
     main {
@@ -34,20 +56,13 @@ b:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   grid-gap:1.5rem;
-  padding:0 1rem;
-}
-
-.grid-set2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap:1.5rem;
-  padding:0 1rem;
+  padding:50px 1rem;
 }
 
 
 
 
-h1, h2, h3, h4, h5 {
+h1, h2, h4, h5 {
   font-family: 'Lora', serif;
   margin-bottom:.5rem;
 }
@@ -68,11 +83,6 @@ h2 {
   font-size:1.75rem;
 }
 
-h3 {
-  font-size:1.5rem;
-  font-weight:400;
-
-}
 h4 {
   font-size:1rem;
 }

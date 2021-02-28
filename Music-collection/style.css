@@ -63,6 +63,7 @@ a{
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   grid-gap:1.5rem;
   padding:50px 1rem;
+
 }
 
 

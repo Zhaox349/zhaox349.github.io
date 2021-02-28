@@ -27,6 +27,11 @@ a,h2 {
 a {
 	text-decoration: none;
 }
+
+a,h2:hover{
+	color:white;
+}
+
 a:link,a:visited,a:hover,a:active{
 	font-family: hero-new, sans-serif;
 	font-weight: 700;
@@ -35,7 +40,12 @@ a:link,a:visited,a:hover,a:active{
 }
 
 h3{
-	font-size:100px;
+	font-size:20px;
+	font-family: hero-new, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	color:#FFDFAC;
+
 }
 
 article{
@@ -64,13 +74,13 @@ article{
 }
 
 .show1 {
-	animation: moveUp 30s 0.6s linear infinite;
+	animation: moveUp 70s 0.6s linear infinite;
 }
 .show2 {
-	animation: moveUp 40s 0.6s linear infinite;
+	animation: moveUp 85s 0.6s linear infinite;
 }
 .show3 {
-	animation: moveUp 40s 0.6s linear infinite;
+	animation: moveUp 85s 0.6s linear infinite;
 }
 
 
@@ -115,12 +125,11 @@ article{
 	text-align: center;
 }
 .page-bottom {
-	grid-row: 2;
-	grid-column: 3;
-	width: 100px;
+	grid-row: 3;
+	grid-column: 2;
 	text-align: center;
 	align-self: center;
-	padding-left: 10px;
+
 }
 .line-box{
 	float: right;

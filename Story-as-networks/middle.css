@@ -1,8 +1,16 @@
 body{
 	background-color: #FFF5E5;
-	display: grid;
-	grid-template-columns: repeat (10,1fr); 
-	grid-template-rows: repeat (5,1fr); 
+	
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
 }
 
 h1 {
@@ -13,12 +21,16 @@ h1 {
 	text-align:center;
 }
 .content {
-    width: 400px;
-    margin: 10 auto;
+    grid-column: 2;
+    grid-row: 2;
+    line-height: 25px;
+    font-size:18px;
 }
+
+
 #Question_mark {
-	width: 100px;
- 	height:100px;
+	width: 150px;
+ 	height:150px;
     align-self: center;
 }
 .channel {
@@ -43,6 +55,85 @@ h1 {
     height: 100%;
     animation: moveDown 10s 0.5s infinite;
 }
+.channel-child3 {
+    height: 100%;
+    position: fixed;
+    left: 330px;
+    height: 100%;
+    animation: moveDown 15s 0.5s infinite;
+}
+
+.channel-child4 {
+    height: 100%;
+    position: fixed;
+    left: 500px;
+    height: 100%;
+    animation: moveDown 12s 0.5s infinite;
+}
+
+.channel-child5 {
+    height: 100%;
+    position: fixed;
+    left: 700px;
+    height: 100%;
+    animation: moveDown 3s 0.5s infinite;
+}
+
+.channel-child6 {
+    height: 100%;
+    position: fixed;
+    left: 300px;
+    height: 100%;
+    animation: moveDown 4s 0.5s infinite;
+}
+
+.channel-child7 {
+    height: 100%;
+    position: fixed;
+    right: 200px;
+    height: 100%;
+    animation: moveDown 13s 0.5s infinite;
+}
+
+.channel-child8 {
+    height: 100%;
+    position: fixed;
+    right: 150px;
+    height: 100%;
+    animation: moveDown 6s 0.5s infinite;
+}
+
+.channel-child9 {
+    height: 100%;
+    position: fixed;
+    right: 240px;
+    height: 100%;
+    animation: moveDown 9s 0.5s infinite;
+}
+
+.channel-child10 {
+    height: 100%;
+    position: fixed;
+    right: 400px;
+    height: 100%;
+    animation: moveDown 17s 0.5s infinite;
+}
+
+.channel-child11 {
+    height: 100%;
+    position: fixed;
+    left: 430px;
+    height: 100%;
+    animation: moveDown 9s 0.5s infinite;
+}
+.channel-child12 {
+    height: 100%;
+    position: fixed;
+    left: 600px;
+    height: 100%;
+    animation: moveDown 13s 0.5s infinite;
+}
+
 @keyframes moveDown {
     0% {
         transform: translateY(0);
@@ -51,3 +142,33 @@ h1 {
         transform: translateY(100%);
     }
 }
+
+.button-back{
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: auto;
+    text-align: center;
+}
+
+.button-next{
+    grid-column: 3;
+    grid-row: 3;
+    margin-top: auto;
+    text-align: center;
+
+}
+
+a{
+    font-family: hero-new, sans-serif;
+    font-weight: 700;
+    color:black;
+    font-style: bold;
+    font-size: 30px;
+    text-align:center;
+
+}
+    
+
+
+
+

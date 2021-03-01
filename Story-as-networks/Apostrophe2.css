@@ -31,18 +31,15 @@ body{
 	grid-column: 2;
 	padding-bottom: 20px;
 	text-align:center;
-
-
-
-}
-
-h1{
+	font-family: hero-new, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 30px;
 	margin-top: 50px;
-	color:white;
-	font-size: 40px;
-    text-align: center;
-
+	color:#FFDFAC;
 }
+
+
 
 .content {
 	color:white;
@@ -64,4 +61,11 @@ h1{
 
 a{
 	color:#FFDFAC;
+	text-decoration: none;
+	font-family: hero-new, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 30px;
+	color:#FFDFAC;
+
 }

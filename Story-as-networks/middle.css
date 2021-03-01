@@ -148,6 +148,7 @@ h1 {
     grid-row: 3;
     margin-top: auto;
     text-align: center;
+
 }
 
 .button-next{
@@ -165,6 +166,7 @@ a{
     font-style: bold;
     font-size: 30px;
     text-align:center;
+    text-decoration: none;
 
 }
     

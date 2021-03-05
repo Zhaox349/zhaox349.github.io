@@ -110,7 +110,7 @@ console.log(movies);
 
 /* Question 9 */
 //Create an array of arrays consisting of the variables from the previous question. Define a variable to hold this array of arrays.//
-let items = ([restaurants],[things],[places],[movies]);
+let items = ([restaurants,things,places,movies]);
 console.log(items);
 
 

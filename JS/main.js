@@ -143,5 +143,10 @@ for (var i = 0; i < arrayLength4; i++) {
 
 /* Question 11 */
 //Create a nested for loop that loops through the array of your favorite items and logs each individual item. The first loop should log the category of the item, while the nested loop should log each individual item in that category.//
+var my_restaurants = (['Haidilao Hotpot','Tsurutontan','Fuyao']);
+my_restaurants.forEach(function(item) {
+  console.log(item);
+});
+
 console.log('I am still confused about loops');
 

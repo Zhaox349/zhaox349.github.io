@@ -117,28 +117,7 @@ console.log(items);
 /* Question 10 */
 //Loop through your array of arrays and log the value of the each item in the array. You should be looping through 4 things, and each value you log should be an array. For example, the first item logged would be an array containing 3 restaurants, the second item would be an array containing 3 animals, etc.//
 
-let arrayLength = restaurants.length;
-for (var i = 0; i < 4; i++) {
-    console.log(restaurants[i]);
-}
 
-
-let arrayLength2 = things.length;
-for (var i = 0; i < 4; i++) {
-    console.log(things[i]);
-}
-
-
-let arrayLength3 = places.length;
-for (var i = 0; i < 4; i++) {
-    console.log(places[i]);
-}
-
-
-let arrayLength4= movies.length;
-for (var i = 0; i < 4; i++) {
-    console.log(movies[i]);
-}
 
 
 /* Question 11 */

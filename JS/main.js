@@ -110,8 +110,8 @@ console.log(movies);
 
 /* Question 9 */
 //Create an array of arrays consisting of the variables from the previous question. Define a variable to hold this array of arrays.//
-let items = ([restaurants,things,places,movies]);
-console.log(items);
+let combination = ([restaurants,things,places,movies]);
+console.log(combination);
 
 
 /* Question 10 */
@@ -123,9 +123,11 @@ console.log(items);
 /* Question 11 */
 //Create a nested for loop that loops through the array of your favorite items and logs each individual item. The first loop should log the category of the item, while the nested loop should log each individual item in that category.//
 
-array.forEach(function(item) {
+combination.forEach(function(item) {
   console.log(item);
-});
 
-console.log('I am still confused about loops');
+  item.forEach(function(restaurants){
+    console.log(restaurants);
+  });
+});
 

@@ -18,21 +18,21 @@ console.log(num.toString());
 
 
 //A boolean value//
-let hungry= ('true');
-let thirsty= ('false');
+let hungry= 'true';
+let thirsty= 'false';
 console.log(hungry);
 
 //An array consisting of each of the letters of your first name//
-let letters = (['X','U','R','U']);
+let letters = ['X','U','R','U'];
 console.log(letters);
 
 //An array consisting of multiple, different data types. Include at least 3 different data types.//
-let dataType = ([2+5, 'milk tea', true])
+let dataType = [2+5, 'milk tea', true]
 console.log(dataType);
 
 //Add two strings togethers. The first string is your first name, and the second string is your last name.//
-let firstName = ('Xuru');
-let lastName = ('Zhao');
+let firstName = 'Xuru';
+let lastName = 'Zhao';
 console.log(firstName,lastName);
 
 //Add two integers togethers to equal the number 100.//
@@ -99,18 +99,18 @@ if ( currentDate.getDay() == 1) {
 
 /* Question 8 */
 //Create 4 arrays consisting of the following items. Define variables to store each of the 4 arrays.//
-let restaurants = (['Haidilao Hotpot','Tsurutontan','Fuyao']);
+let restaurants = ['Haidilao Hotpot','Tsurutontan','Fuyao'];
 console.log(restaurants);
-let things = (['go to movie theater','travelling','date with boyfriend']);
+let things = ['go to movie theater','travelling','date with boyfriend'];
 console.log(things);
-let places = (['SoHo','Koreantown','Chinatown']);
+let places = ['SoHo','Koreantown','Chinatown'];
 console.log(places);
-let movies = (['Flipped','Train to Busan','Iron Man'])
+let movies = ['Flipped','Train to Busan','Iron Man'];
 console.log(movies);
 
 /* Question 9 */
 //Create an array of arrays consisting of the variables from the previous question. Define a variable to hold this array of arrays.//
-let items = [[restaurants],[things],[places],[movies]];
+let items = ([restaurants],[things],[places],[movies]);
 console.log(items);
 
 
@@ -118,32 +118,32 @@ console.log(items);
 //Loop through your array of arrays and log the value of the each item in the array. You should be looping through 4 things, and each value you log should be an array. For example, the first item logged would be an array containing 3 restaurants, the second item would be an array containing 3 animals, etc.//
 
 let arrayLength = restaurants.length;
-for (var i = 0; i < arrayLength; i++) {
+for (var i = 0; i < 4; i++) {
     console.log(restaurants[i]);
 }
 
 
 let arrayLength2 = things.length;
-for (var i = 0; i < arrayLength2; i++) {
+for (var i = 0; i < 4; i++) {
     console.log(things[i]);
 }
 
 
 let arrayLength3 = places.length;
-for (var i = 0; i < arrayLength3; i++) {
+for (var i = 0; i < 4; i++) {
     console.log(places[i]);
 }
 
 
 let arrayLength4= movies.length;
-for (var i = 0; i < arrayLength4; i++) {
+for (var i = 0; i < 4; i++) {
     console.log(movies[i]);
 }
 
 
 /* Question 11 */
 //Create a nested for loop that loops through the array of your favorite items and logs each individual item. The first loop should log the category of the item, while the nested loop should log each individual item in that category.//
-var my_restaurants = (['Haidilao Hotpot','Tsurutontan','Fuyao']);
+var my_restaurants = ['Haidilao Hotpot','Tsurutontan','Fuyao'];
 my_restaurants.forEach(function(item) {
   console.log(item);
 });

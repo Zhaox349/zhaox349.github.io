@@ -1,0 +1,30 @@
+html{
+	font-size:62.5%;
+	background-color:#61BFAD;
+}
+
+
+#container{
+	width:100vw;
+	height:100vh;
+	margin-top: 10px;
+
+
+}
+
+  
+
+.button {
+  width: 10rem;
+  height: 5rem;
+  background: #F9F7E8;
+  cursor: pointer;
+
+}
+
+img{
+	position:absolute;
+	width:20rem;
+	height:20rem;
+}
+

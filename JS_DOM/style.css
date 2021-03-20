@@ -28,3 +28,61 @@ img{
 	height:20rem;
 }
 
+.box1{
+	border:.1rem solid black;
+	height:50px;
+	width:50px;
+	background-color: pink;
+	cursor: pointer;
+}
+
+.box2{
+	border:.1rem solid black;
+	height:50px;
+	width:50px;
+	background-color: #FDF06F;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.box3{
+	border:.1rem solid black;
+	height:50px;
+	width:50px;
+	background-color: #FF9966;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.box4{
+	border:.1rem solid black;
+	height:50px;
+	width:50px;
+	background-color: #FF6B61;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.box5{
+	border:.1rem solid black;
+	height:50px;
+	width:50px;
+	background-color: #75FFC0;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.remove{
+  width: 10rem;
+  height: 5rem;
+  background: #F9F7E8;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.count{
+	font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+

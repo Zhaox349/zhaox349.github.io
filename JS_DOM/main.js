@@ -18,11 +18,11 @@ buttonClickMe.addEventListener('click', function(event) {
 	container.appendChild(image);
 
 	var counter = document.querySelectorAll('.new-content');
-	if(counter.length === 1 || counter.length === 0){
-		textCountId.innerHTML = counter.length + ' item';
-	} else{
-		textCountId.innerHTML = counter.length + ' items';
+	var counterText = counter.length + ' item';
+	if (counter.length > 1) {
+		counterText += 's';
 	}
+	textCountId.innerHTML = counterText;
 });
 
 
@@ -32,13 +32,12 @@ container.addEventListener('click', function(event) {
 	}
 
 	var counter = document.querySelectorAll('.new-content');
-	if(counter.length === 1 || counter.length === 0){
-		textCountId.innerHTML = counter.length + ' item';
-	} else{
-		textCountId.innerHTML = counter.length + ' items';
+	var counterText = counter.length + ' item';
+	if (counter.length > 1) {
+		counterText += 's';
 	}
+	textCountId.innerHTML = counterText;
 });
-
 
 box1Id.addEventListener('click', function(event) {
 	var boxes = document.querySelectorAll('.new-content');

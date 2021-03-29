@@ -5,14 +5,14 @@ var AbortController;
 if (typeof window === 'undefined') {
     AbortController = require('abort-controller');
 }
+else if ('signal' in new Request('')) {
+    AbortController = window.AbortController;
+}
 else {
-    if ('signal' in new Request('')) {
-        AbortController = window.AbortController;
-    }
-    else {
-        var polyfill = require('abortcontroller-polyfill/dist/cjs-ponyfill');
-        AbortController = polyfill.AbortController;
-    }
+    /* eslint-disable @typescript-eslint/no-var-requires */
+    var polyfill = require('abortcontroller-polyfill/dist/cjs-ponyfill');
+    /* eslint-enable @typescript-eslint/no-var-requires */
+    AbortController = polyfill.AbortController;
 }
 module.exports = AbortController;
 
@@ -66,13 +66,15 @@ var Base = /** @class */ (function () {
     };
     Base.prototype.makeRequest = function (options) {
         var _this = this;
+        var _a;
         if (options === void 0) { options = {}; }
         var method = get_1.default(options, 'method', 'GET').toUpperCase();
         var url = this._airtable._endpointUrl + "/v" + this._airtable._apiVersionMajor + "/" + this._id + get_1.default(options, 'path', '/') + "?" + object_to_query_param_string_1.default(get_1.default(options, 'qs', {}));
         var controller = new abort_controller_1.default();
+        var headers = this._getRequestHeaders(Object.assign({}, this._airtable._customHeaders, (_a = options.headers) !== null && _a !== void 0 ? _a : {}));
         var requestOptions = {
             method: method,
-            headers: this._getRequestHeaders(get_1.default(options, 'headers', {})),
+            headers: headers,
             signal: controller.signal,
         };
         if ('body' in options && _canRequestMethodIncludeBody(method)) {
@@ -80,12 +82,11 @@ var Base = /** @class */ (function () {
         }
         var timeout = setTimeout(function () {
             controller.abort();
-        }, this._airtable.requestTimeout);
+        }, this._airtable._requestTimeout);
         return new Promise(function (resolve, reject) {
             fetch_1.default(url, requestOptions)
                 .then(function (resp) {
                 clearTimeout(timeout);
-                resp.statusCode = resp.status;
                 if (resp.status === 429 && !_this._airtable._noRetryIfRateLimited) {
                     var numAttempts_1 = get_1.default(options, '_numAttempts', 0);
                     var backoffDelayMs = exponential_backoff_with_jitter_1.default(numAttempts_1);
@@ -188,10 +189,11 @@ var Base = /** @class */ (function () {
         var baseFn = function (tableName) {
             return base.doCall(tableName);
         };
-        forEach_1.default(['table', 'makeRequest', 'runAction', 'getId'], function (baseMethod) {
-            baseFn[baseMethod] = base[baseMethod].bind(base);
-        });
         baseFn._base = base;
+        baseFn.table = base.table.bind(base);
+        baseFn.makeRequest = base.makeRequest.bind(base);
+        baseFn.runAction = base.runAction.bind(base);
+        baseFn.getId = base.getId.bind(base);
         return baseFn;
     };
     return Base;
@@ -217,20 +219,26 @@ module.exports = Base;
  * the function is not called with a callback for the last argument, the
  * function will return a promise instead.
  */
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types */
 function callbackToPromise(fn, context, callbackArgIndex) {
     if (callbackArgIndex === void 0) { callbackArgIndex = void 0; }
+    /* eslint-enable @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types */
     return function () {
+        var callArgs = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            callArgs[_i] = arguments[_i];
+        }
         var thisCallbackArgIndex;
         if (callbackArgIndex === void 0) {
             // istanbul ignore next
-            thisCallbackArgIndex = arguments.length > 0 ? arguments.length - 1 : 0;
+            thisCallbackArgIndex = callArgs.length > 0 ? callArgs.length - 1 : 0;
         }
         else {
             thisCallbackArgIndex = callbackArgIndex;
         }
-        var callbackArg = arguments[thisCallbackArgIndex];
+        var callbackArg = callArgs[thisCallbackArgIndex];
         if (typeof callbackArg === 'function') {
-            fn.apply(context, arguments);
+            fn.apply(context, callArgs);
             return void 0;
         }
         else {
@@ -238,9 +246,9 @@ function callbackToPromise(fn, context, callbackArgIndex) {
             // If an explicit callbackArgIndex is set, but the function is called
             // with too few arguments, we want to push undefined onto args so that
             // our constructed callback ends up at the right index.
-            var argLen = Math.max(arguments.length, thisCallbackArgIndex);
+            var argLen = Math.max(callArgs.length, thisCallbackArgIndex);
             for (var i = 0; i < argLen; i++) {
-                args_1.push(arguments[i]);
+                args_1.push(callArgs[i]);
             }
             return new Promise(function (resolve, reject) {
                 args_1.push(function (err, result) {
@@ -307,13 +315,13 @@ module.exports = exponentialBackoffWithJitter;
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+// istanbul ignore file
 var node_fetch_1 = __importDefault(require("node-fetch"));
-module.exports = (
-// istanbul ignore next
-typeof window === 'undefined' ? node_fetch_1.default : window.fetch.bind(window));
+module.exports = typeof window === 'undefined' ? node_fetch_1.default : window.fetch.bind(window);
 
 },{"node-fetch":20}],8:[function(require,module,exports){
 "use strict";
+/* eslint-enable @typescript-eslint/no-explicit-any */
 function has(object, property) {
     return Object.prototype.hasOwnProperty.call(object, property);
 }
@@ -376,6 +384,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var isArray_1 = __importDefault(require("lodash/isArray"));
 var forEach_1 = __importDefault(require("lodash/forEach"));
 var isNil_1 = __importDefault(require("lodash/isNil"));
+/* eslint-enable @typescript-eslint/no-explicit-any */
 // Adapted from jQuery.param:
 // https://github.com/jquery/jquery/blob/2.2-stable/src/serialize.js
 function buildParams(prefix, obj, addFn) {
@@ -744,7 +753,7 @@ function runAction(base, method, path, queryParams, bodyData, callback, numAttem
     }
     var timeout = setTimeout(function () {
         controller.abort();
-    }, base._airtable.requestTimeout);
+    }, base._airtable._requestTimeout);
     fetch_1.default(url, options)
         .then(function (resp) {
         clearTimeout(timeout);
@@ -882,7 +891,7 @@ var Table = /** @class */ (function () {
         if (isArray_1.default(recordsDataOrRecordId)) {
             var recordsData = recordsDataOrRecordId;
             opts = isPlainObject_1.default(recordDataOrOptsOrDone) ? recordDataOrOptsOrDone : {};
-            done = optsOrDone || recordDataOrOptsOrDone;
+            done = (optsOrDone || recordDataOrOptsOrDone);
             var method = isDestructiveUpdate ? 'put' : 'patch';
             var requestData = assign_1.default({ records: recordsData }, opts);
             this._base.runAction(method, "/" + this._urlEncodedNameOrId() + "/", {}, requestData, function (err, resp, body) {
@@ -900,7 +909,7 @@ var Table = /** @class */ (function () {
             var recordId = recordsDataOrRecordId;
             var recordData = recordDataOrOptsOrDone;
             opts = isPlainObject_1.default(optsOrDone) ? optsOrDone : {};
-            done = done || optsOrDone;
+            done = (done || optsOrDone);
             var record = new record_1.default(this, recordId);
             if (isDestructiveUpdate) {
                 record.putUpdate(recordData, opts, done);
@@ -990,6 +999,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 var includes_1 = __importDefault(require("lodash/includes"));
 var isArray_1 = __importDefault(require("lodash/isArray"));
+/* eslint-enable @typescript-eslint/no-explicit-any */
 function check(fn, error) {
     return function (value) {
         if (fn(value)) {
@@ -6765,22 +6775,27 @@ var Airtable = /** @class */ (function () {
             _apiKey: {
                 value: opts.apiKey || Airtable.apiKey || defaultConfig.apiKey,
             },
-            _endpointUrl: {
-                value: opts.endpointUrl || Airtable.endpointUrl || defaultConfig.endpointUrl,
-            },
             _apiVersion: {
                 value: apiVersion,
             },
             _apiVersionMajor: {
                 value: apiVersion.split('.')[0],
             },
+            _customHeaders: {
+                value: opts.customHeaders || {},
+            },
+            _endpointUrl: {
+                value: opts.endpointUrl || Airtable.endpointUrl || defaultConfig.endpointUrl,
+            },
             _noRetryIfRateLimited: {
                 value: opts.noRetryIfRateLimited ||
                     Airtable.noRetryIfRateLimited ||
                     defaultConfig.noRetryIfRateLimited,
             },
+            _requestTimeout: {
+                value: opts.requestTimeout || Airtable.requestTimeout || defaultConfig.requestTimeout,
+            },
         });
-        this.requestTimeout = opts.requestTimeout || defaultConfig.requestTimeout;
         if (!this._apiKey) {
             throw new Error('An API key is required to connect to Airtable');
         }
@@ -6798,11 +6813,12 @@ var Airtable = /** @class */ (function () {
         };
     };
     Airtable.configure = function (_a) {
-        var apiKey = _a.apiKey, endpointUrl = _a.endpointUrl, apiVersion = _a.apiVersion, noRetryIfRateLimited = _a.noRetryIfRateLimited;
+        var apiKey = _a.apiKey, endpointUrl = _a.endpointUrl, apiVersion = _a.apiVersion, noRetryIfRateLimited = _a.noRetryIfRateLimited, requestTimeout = _a.requestTimeout;
         Airtable.apiKey = apiKey;
         Airtable.endpointUrl = endpointUrl;
         Airtable.apiVersion = apiVersion;
         Airtable.noRetryIfRateLimited = noRetryIfRateLimited;
+        Airtable.requestTimeout = requestTimeout;
     };
     Airtable.base = function (baseId) {
         return new Airtable().base(baseId);

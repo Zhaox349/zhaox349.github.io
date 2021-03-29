@@ -39,40 +39,19 @@ container.addEventListener('click', function(event) {
 	textCountId.innerHTML = counterText;
 });
 
-box1Id.addEventListener('click', function(event) {
-	var boxes = document.querySelectorAll('.new-content');
-	boxes.forEach(function(box) {
-		box.style.backgroundColor = 'pink';
-	})
+container.addEventListener('click', function(event) {
+  var target = event.target;
+  if (target.classList.contains('swatch')) {
+    // Get the computed style of the element (this means the CSS applied from external stylesheets, not just in the style attribute)
+    var color = getComputedStyle(target)['backgroundColor'];
+    var boxes = document.querySelectorAll('.new-content');
+
+    boxes.forEach(function(box) {
+      box.style.backgroundColor = color;
+    });
+  }
 });
 
-box2Id.addEventListener('click', function(event) {
-	var boxes = document.querySelectorAll('.new-content');
-	boxes.forEach(function(box) {
-		box.style.backgroundColor = '#FDF06F';
-	})
-});
-
-box3Id.addEventListener('click', function(event) {
-	var boxes = document.querySelectorAll('.new-content');
-	boxes.forEach(function(box) {
-		box.style.backgroundColor = '#FF9966';
-	})
-});
-
-box4Id.addEventListener('click', function(event) {
-	var boxes = document.querySelectorAll('.new-content');
-	boxes.forEach(function(box) {
-		box.style.backgroundColor = '#FF6B61';
-	})
-});
-
-box5Id.addEventListener('click', function(event) {
-	var boxes = document.querySelectorAll('.new-content');
-	boxes.forEach(function(box) {
-		box.style.backgroundColor = '#75FFC0';
-	})
-});
 
 
 removeId.addEventListener('click', function(event) {

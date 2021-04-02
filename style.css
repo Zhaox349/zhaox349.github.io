@@ -3,43 +3,6 @@ html {
 }
 
 
-.header-list > li {display:inline-block;vertical-align:middle; color:#FF8888;}
-.header-list > li:nth-child(1) {font-size:20px;width:200px;}
-.header-list > li:nth-child(2) {width:calc(100% - 250px);}
-.header-list > li:nth-child(3) {width:50px;}
-
-
-
-
-input[id="menuicon"] {display:none;}
-input[id="menuicon"] + label {display:block;position:relative;width:30%;height:30px;cursor:pointer;}
-input[id="menuicon"] + label span {display:block;position:absolute;width:20%;height:3px;background:#FF8888;transition:all .35s;}
-input[id="menuicon"] + label span:nth-child(1) {top:10%;}
-input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);} /* ºñ½ÁÇÏ°Ô »ç¿ëÇÒ ¼ö ÀÖ´Â style top:calc(50% - 2.5px); margin-top:-2.5px;*/
-input[id="menuicon"] + label span:nth-child(3) {bottom:10%;}
-input[id="menuicon"]:checked + label {z-index:2;}
-input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
-input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
-input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
-div[class="sidebar"] {width:100%;height:0px;background:#CCDDFF;position:fixed;top:0px;left:0;z-index:0;transition:all .35s;overflow:hidden;}
-input[id="menuicon"]:checked + label + div {height:300px;}
-
-.sitemap-ul {font-size:0;width:1200px;margin:15px auto;text-align:center;}
-.sitemap-ul > li {font-size:15px;display:inline-block;vertical-align:top;width:20%;}
-
-
-
-header {
-  width:100%;
-  background:#99BBFF;
-}
-
-
-.header-list {
-  width:1100px;margin:0 auto;padding: 0;
-}
-
-
 
 a {
   text-decoration: underline;
@@ -58,37 +21,26 @@ b {
 
 main {
   display:grid;
-  grid-template-columns: 2fr 1fr ;
+  grid-template-columns: 4fr 4fr 4fr;
   grid-auto-rows:min-content;
   grid-gap:2rem;
-  width: 55vw;
+  width: 70vw;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
-.intro-block {
-  grid-column:1 / 3;
+
+.statement1 {
+  grid-column:1 ;
 }
 
-.statement {
-  grid-column:1 / 2;
+.statement2 {
+  grid-column:2 ;
 }
 
-.projects {
-  grid-column:2 / 3;
+.statement3 {
+  grid-column:3 ;
 }
-
-.item {
-  grid-column:1;
-  border-top: 1px solid #ccc;
-  padding: 1rem 0;
-}
-
-.definition {
-  grid-column:2;
-  border-top: 1px solid #ccc;
-  padding: 1rem 0;
-}
-
 
 
 h1, h2, h3, h4, h5 {

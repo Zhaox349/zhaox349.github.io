@@ -37,9 +37,7 @@ base('Books').select({
 
     var description = document.createElement('div');
     description.classList.add('description');
-    // description.addEventListener('mouseover',function(){
     description.innerHTML = record.fields.description;
-    // } );
 
 
     var coverImage = document.createElement('img');
@@ -57,10 +55,17 @@ base('Books').select({
     book.append(coverImage);
     bookContainer.append(book);
 
-     book.addEventListener("mouseover", function() {
+    book.addEventListener("mouseover", function() {
       description.classList.toggle("active");
       coverImage.classList.toggle("active");
     });
+
+    book.addEventListener("mouseleave", function() {
+      description.classList.remove("active");
+      coverImage.classList.remove("active");
+      });
+
+
 
   });
 

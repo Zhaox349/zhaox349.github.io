@@ -14,37 +14,54 @@ base('Books').select({
   view: 'Grid view'
 }).eachPage(function page(records, fetchNextPage) {
 
-
-  var bookContainer = document.querySelector('#book-container');
+  var bookContainer = document.querySelector('.container');
   var description = document.querySelector('#description');
+
 
 
 
   records.forEach(function(record) {
     console.log('Retrieved', record.get('title'), record.fields);
 
-    var book = document.createElement('div');
-    var label = document.createElement('div');
-    var coverImageUrl = record.fields.cover_image[0].url;
+    // var book = document.createElement('div');
 
-    label.classList.add('book__label');
-    label.innerHTML = record.fields.title;
+    var book = document.createElement("div");
+    book.classList.add("book-container");
+    document.querySelector(".container").append(book);
 
-    book.classList.add('book');
-    book.style.backgroundImage = 'url(' + coverImageUrl + ')';
 
-    book.addEventListener('mouseover',function(){
-      description.innerHTML = record.fields.description;
-    } );
+    var bookTitle= document.createElement('div');
+    bookTitle.classList.add('book-title');
+    bookTitle.innerHTML = record.fields.title;
 
-  
+
+    var description = document.createElement('div');
+    description.classList.add('description');
+    // description.addEventListener('mouseover',function(){
+    description.innerHTML = record.fields.description;
+    // } );
+
+
+    var coverImage = document.createElement('img');
+    coverImage.classList.add('cover-image');
+    coverImage.src = record.fields.cover_image[0].url;
+    // book.style.backgroundImage = 'url(' + coverImageUrl + ')';
+
+
     book.addEventListener('click',function(){
       window.open(record.fields.more_info);
     } );
 
-
-    book.append(label);
+    book.append(bookTitle);
+    book.append(description);
+    book.append(coverImage);
     bookContainer.append(book);
+
+     book.addEventListener("mouseover", function() {
+      description.classList.toggle("active");
+      coverImage.classList.toggle("active");
+    });
+
   });
 
 
@@ -53,3 +70,5 @@ base('Books').select({
 }, function done(err) {
   if (err) { console.error(err); return; }
 });
+
+

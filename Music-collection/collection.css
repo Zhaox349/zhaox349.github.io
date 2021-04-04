@@ -3,18 +3,80 @@
 html {
   font-size: 1rem;
   font-family: 'Lora', serif;
-  background-color: black;
+   margin:0;
+  padding: 0;
+
 }
 
 body {
-  padding-top:20px;
   color:#000;
+  margin:0;
+  padding: 0;
+  background-color: black;
 }
 
-.navigation {
-    justify-content: center;
-    margin-bottom: 10px;
+h1 {
+  font-size:72px;
+  text-align:center;
+  padding-bottom: 20px;
+  font-family: 'Playball', cursive;
+  margin-top:70px;
+  color:#FF00D6;
+  text-shadow: 0 0 10px #0CFFE2;
 }
+
+
+
+.outer{
+  width: 1280px;
+  height: 720px;
+  background: url(./assets/background.jpeg);
+  float: left;
+  background-size: 1280px 720px;
+}
+
+.image  {
+  height: 267px;
+  width: 267px;
+  border:3px solid #0CFFE2 ;
+}
+
+
+.navigation1 {
+  transform: rotate(-7deg);
+  margin-left: 40px;
+  margin-top: 60px;
+  float:left;
+
+}
+
+.navigation2 {
+  transform: rotate(6deg);
+  margin-left: 40px;
+  margin-top: 100px;
+  float:left;
+
+}
+
+.navigation3 {
+  transform: rotate(-4.6deg);
+  margin-left: 40px;
+  margin-top: 20px;
+  float:left;
+
+}
+
+.navigation4 {
+  transform: rotate(3.7deg);
+  margin-left: 40px;
+  margin-top: 150px;
+  float:left;
+
+}
+
+
+
+/*
 
 .mood {
     text-decoration: underline;
@@ -47,31 +109,6 @@ body {
 }
 
 
-main {
-  max-width:90em;
-  margin:0 auto;
-}
-
-.grid-set {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap:1.5rem;
-  padding:0 1rem;
-}
-
-
-img {
-    width: 100%;
-}
-
-
-    .grid-item {
-  font-size: 1em;
-  text-align: center;
-  padding-top:1rem;
-
-}
-
 
 
 
@@ -80,17 +117,7 @@ h1, h2, h3, h4, h5 {
   margin-bottom:.5rem;
 }
 
-h1 {
-  font-size:50px;
-  text-align:center;
-  font-style: italic;
-  padding-bottom: 50px;
-  font-family: 'Work Sans', sans-serif;
-  line-height: 1;
-  font-weight:700;
-  padding-bottom:20px;
-  color:white;
-}
+
 
 h2 {
   font-size:1.75rem;
@@ -136,3 +163,4 @@ p {
 
 
 
+*/

@@ -15,9 +15,7 @@ base('Books').select({
 }).eachPage(function page(records, fetchNextPage) {
 
   var bookContainer = document.querySelector('.container');
-  var description = document.querySelector('#description');
-
-
+  // var description = document.querySelector('#description');
 
 
   records.forEach(function(record) {
@@ -48,6 +46,7 @@ base('Books').select({
 
     book.addEventListener('click',function(){
       window.open(record.fields.more_info);
+      //change to insert the URL, since sometimes it will not work when clicking command+Click
     } );
 
     book.append(bookTitle);
@@ -59,6 +58,7 @@ base('Books').select({
       description.classList.toggle("active");
       coverImage.classList.toggle("active");
     });
+    //change css of active and remove 
 
     book.addEventListener("mouseleave", function() {
       description.classList.remove("active");

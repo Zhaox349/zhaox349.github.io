@@ -1,0 +1,128 @@
+body {
+  background-color: white;
+  font-family:'Caudex', serif;
+  src: url("https://fonts.googleapis.com/css2?family=Caudex&display=swap");
+}
+
+
+.heading{
+    margin: 0px auto;
+    max-width: 70rem;
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 4rem;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.name{
+	color:black;
+	font-size: 40px;
+}
+
+
+.label{
+	color:black;
+	font-size: 30px;
+
+}
+
+
+.container{
+	height: 600px;
+    background-color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.subtitle {
+    position: absolute;
+    width: 245px;
+    height: 50px;
+    left: 615px;
+    top: 328px;
+    font-family: 'Caudex';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 114.97%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: white;
+}
+
+.title {
+    position: absolute;
+    width: 714px;
+    height: 115px;
+    padding-left: 380px;
+    top: 374px;
+    font-family: 'Caudex';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 114.97%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.275em;
+    color: #000000;
+    text-shadow: 0px 4px 21px rgb(255 255 255 / 95%);
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+.project{
+	font-size: 1.56rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.text {
+	font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.documentation {
+	display:grid;
+	grid-template-columns: 1fr 1fr; grid-gap: 1.56rem;
+	height: 400px;
+    margin-top:70px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.dark {
+    width:550px;
+    height:350px;
+}
+
+.light{
+    width:600px;
+    height:350px;
+    border:1px solid black;
+}
+
+
+

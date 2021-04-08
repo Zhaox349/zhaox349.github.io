@@ -14,25 +14,43 @@ base('Table 1').select({
   maxRecords: 200,
   view: 'Grid view'
 }).eachPage(function page(records, fetchNextPage) {
-  var placeContainer = document.querySelector('#place-container');
+
+  var placeContainer = document.querySelector('.container');
 
    records.forEach(function(record) {
-    console.log('Retrieved', record.get('title'), record.fields);
+    console.log(record.get('title'), record.fields);
 
 
     var place = document.createElement('div');
-    var label = document.createElement('div');
-    var photoUrl = record.fields.photo[0].url;
+    place.classList.add("place-container");
+    document.querySelector(".container").append(place);
 
-    label.classList.add('place__label');
-    label.innerHTML = record.fields.title;
-
-    place.classList.add('place');
-    place.style.backgroundImage = 'url(' + photoUrl + ')';
+    var placeTitle= document.createElement('div');
+    placeTitle.classList.add('place-title');
+    placeTitle.innerHTML = record.fields.title;
 
 
-    place.append(label);
+    var description = document.createElement('div');
+    description.classList.add('description');
+    description.innerHTML = record.fields.description;
+
+
+    var photoUrl = document.createElement('img');
+    photoUrl.classList.add('photo');
+    photoUrl.src = record.fields.photo[0].url;
+
+
+    var city = document.createElement('div');
+    city.classList.add('city');
+    city.innerHTML = record.fields.city;
+
+    place.append(placeTitle);
+    place.append(description);
+    placeTitle.append(photoUrl);
+    placeTitle.append(city);
     placeContainer.append(place);
+    
+
   });
 
   fetchNextPage();

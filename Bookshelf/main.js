@@ -21,7 +21,6 @@ base('Books').select({
   records.forEach(function(record) {
     console.log('Retrieved', record.get('title'), record.fields);
 
-    // var book = document.createElement('div');
 
     var book = document.createElement("div");
     book.classList.add("book-container");

@@ -1,23 +1,52 @@
 html {
   -webkit-font-smoothing: antialiased;
   font-family: sans-serif;
+  font-size: 1.5rem;
 }
 
-.landmark {
-  display: inline-block;
+
+.normal-circle{
+  width:30px;
+  height:30px;
+  border-radius: 15px;
+  background:orange;
+
+}
+
+
+.place-container {
+ /* display: inline-block;
   width: 200px;
   height: 320px;
   background-size: cover;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 25px;
   vertical-align: top;
   position: relative;
+  border:1px solid black;
+  padding: 1rem;*/
 }
 
-.book__label {
-  position: absolute;
-  bottom: 0;
-  border-radius: 4px;
-  background-color: black;
+.place-title {
   color: white;
 }
+
+
+.photo {
+  width: 250px;
+  height: 320px;
+
+}
+
+
+.description{
+  display: none;
+  color:white;
+}
+
+.city {
+  width: 250px;
+  height: 320px;
+
+}
+

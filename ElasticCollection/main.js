@@ -8,17 +8,19 @@ Airtable.configure({
   apiKey: 'keyFxvwCW8U8MxKns',
   endpointUrl: 'https://api.airtable.com'
 });
-var base = Airtable.base('appMHd0Kxdec8oG17');
+var base = Airtable.base('apppLaTVMWcNaWWa8');
 
 base('Table 1').select({
   maxRecords: 200,
   view: 'Grid view'
 }).eachPage(function page(records, fetchNextPage) {
+  console.log('11111111111111111111111');
+  console.log(records);
 
   var placeContainer = document.querySelector('.container');
 
    records.forEach(function(record) {
-    console.log(record.get('title'), record.fields);
+    
 
 
     var place = document.createElement('div');

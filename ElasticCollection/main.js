@@ -51,7 +51,7 @@ base('Table 1').select({
     placeTitle.append(photoUrl);
     placeTitle.append(city);
     placeContainer.append(place);
-    
+
 
   });
 

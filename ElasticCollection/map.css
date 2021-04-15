@@ -46,3 +46,27 @@ html {
   width:600px;
   height:600px;
 }
+
+.gif{
+  position: absolute;
+  left:45%;
+  top:50%;
+  margin-left:-220px;
+  margin-top:-300px;
+  width:600px;
+  height:600px;
+}
+
+.backHome{
+  position: absolute;
+  right: 20px;
+  top:20px;
+  border:3px solid black;
+  border-radius: 4px;
+  width:100px;
+  height:40px;
+  text-align: center;
+  line-height: 40px;
+  color: black;
+  cursor: pointer;
+}

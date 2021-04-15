@@ -2,8 +2,27 @@ html {
   -webkit-font-smoothing: antialiased;
   font-family: 'Aladin', cursive;
   font-size: 1.5rem;
-  background-color: #000000;
+  background-color: black;
+/*   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;*/
 }
+
+/*@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+}*/
+
+
+
 .left{
   position:absolute;
   top:0px;
@@ -28,7 +47,7 @@ html {
   float:left;
   width:300px;
   color: #ffffff;
-  margin-left:50px;
+  margin-left:60px;
   margin-top: 30px;
 
   font-family: 'Cabin', sans-serif;
@@ -72,4 +91,13 @@ html {
   font-size: 30px;
   color:#000000;
   cursor: pointer;
+  font-family: 'Cabin', sans-serif;
+  font-size:30px;
 }
+
+
+
+
+
+
+    

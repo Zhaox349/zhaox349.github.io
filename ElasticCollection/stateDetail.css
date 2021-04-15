@@ -8,13 +8,13 @@ html {
   position: absolute;
   left: 20px;
   top:20px;
-  border:1px solid #ffffff;
+  border:1px solid #ffc907;
   border-radius: 4px;
   width:100px;
   height:40px;
   text-align: center;
   line-height: 40px;
-  color: #ffffff;
+  color: #FFC907;
   cursor: pointer;
 }
 .subtitle{
@@ -40,9 +40,43 @@ html {
   border-radius: 5px;
   margin:20px;
   cursor: pointer;
-  
-
 }
+
+/*https://codepen.io/yuhomyan/pen/OJMejWJ*/
+.item:hover {
+  background: transparent;
+  box-shadow:none;
+}
+.item:before,
+.item:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #ffc907;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.item:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.item:hover:before,
+.item:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+
+
 
 .itemTop{
   float:left;
@@ -54,12 +88,23 @@ html {
 
 .itemCenter{
   position: absolute;
-  top:140px;
+  top:135px;
   height:40px;
   width:300px;
   text-align: center;
   line-height: 40px;
-  font-size: 26px;
+  font-size: 28px;
+  color: #ffc907;
+}
+
+.itemCity{
+  position: absolute;
+  top:165px;
+  height:40px;
+  width:300px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 28px;
   color: #ffffff;
 }
 

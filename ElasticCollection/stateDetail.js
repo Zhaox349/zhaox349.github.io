@@ -23,6 +23,11 @@ base('Table 1').select({
     var itemCenter = document.createElement('div');
     itemCenter.classList.add("itemCenter");
     itemCenter.innerHTML=itemParam.fields.title;
+
+    var itemCity = document.createElement('div');
+    itemCity.classList.add("itemCity");
+    itemCity.innerHTML=itemParam.fields.city;
+
   
     var itemBottom = document.createElement('div');
     itemBottom.classList.add("itemBottom");
@@ -43,6 +48,7 @@ base('Table 1').select({
     }
     item.append(itemTop);
     item.append(itemCenter);
+    item.append(itemCity);
     item.append(itemBottom);
 
     item.addEventListener('click',function(){

@@ -15,6 +15,8 @@ base('Table 1').select({
 
   console.log('11111111111111111111111');
   console.log(records);
+
+  // get rid of repetitiom
   var stateArray=[];
   for(var i=0;i<records.length;i++){
     var hasValueInStateArray=false
@@ -31,6 +33,7 @@ base('Table 1').select({
 
   console.log('22222222222222222222222');
   console.log(stateArray);
+  
   for(var x=0;x<stateArray.length;x++){
     console.log('3333333333333333333333333333333333');
     console.log(stateArray[x]);

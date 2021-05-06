@@ -1,0 +1,212 @@
+@font-face { 
+	font-family: 'Frijole'; 
+	src: url('Frijole.eot'); 
+	src: local('Frijole Regular'), 
+	local('Frijole'), 
+	url('Frijole.woff') format('woff'), 
+	url('Frijole.ttf') format('truetype'), 
+	url('Frijole.svg#Frijole') format('svg'); 
+} 
+
+html {
+  font-family: 'Frijole', cursive;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  background-color: #8BEAFF;
+}
+
+.clear{
+  clear: both;
+}
+.container {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin-left:-500px;
+  margin-top:-260px;
+  width:1000px;
+  height:500px;
+}
+
+.left{
+	float:left;
+  width:200px;
+  height: 600px;
+  background: url(./icon/bar.png);
+  background-size:200px 550px;
+	background-repeat:no-repeat;
+}
+.up{
+  float:left;
+  width:50px;
+  height: 50px;
+  background: url(./icon/up.png);
+  background-size:50px 50px;
+	background-repeat:no-repeat;
+  margin-left: 74px;
+  margin-top: 26px;
+  cursor: pointer;
+}
+.first{
+  float:left;
+  width:50px;
+  height: 50px;
+  margin-left: 65px;
+  margin-top: 66px;
+  cursor: pointer;
+}
+.second{
+  float:left;
+  width:50px;
+  height: 50px;
+  margin-left: 65px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.third{
+  float:left;
+  width:50px;
+  height: 50px;
+  margin-left: 65px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.selectImg{
+  float:left;
+  width:70px;
+  height: 70px;
+}
+.down{
+  float:left;
+  width:50px;
+  height: 50px;
+  background: url(./icon/down.png);
+  background-size:50px 50px;
+	background-repeat:no-repeat;
+  margin-left: 74px;
+  margin-top: 90px;
+  cursor: pointer;
+}
+
+.right{
+	float:left;
+  width:800px;
+  height: 500px;
+}
+
+.title{
+	font-family: 'Frijole', cursive;
+	font-size:40px;
+  line-height: 40px;
+	color:white;
+	float:left;
+  width:800px;
+  height:50px;
+  text-align: center;
+
+}
+
+.box{
+  float:left;
+  width:800px;
+	background-color: #10C9F1;
+	height:450px;
+	border-radius: 25px;
+  border:5px solid white;
+
+}
+.sound{
+	float:right;
+	height:40px;
+	width:40px;
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+  background: url(./icon/sound.png);
+  background-size:40px 40px;
+  cursor: pointer;
+	background-repeat:no-repeat;
+
+}
+
+.fruit{
+  float:left;
+  margin-left: 250px;
+  margin-top:40px;
+  width:300px;
+  height:300px;
+
+}
+.fruitImg{
+  float:left;
+  width:300px;
+  height:300px;
+
+}
+.operate{
+  float:left;
+  width:800px;
+  height:100px;
+  margin-top:10px;
+}
+.name{
+  float: left;
+  width:250px;
+  height:100px;
+  line-height: 100px;
+  text-align: center;
+  color:black;
+  font-family: 'Fredoka One', cursive;
+	font-size:50px;
+  margin-left: 10px;
+
+}
+
+.input{
+  float: left;
+  margin-top:20px;
+	height:60px;
+	width:200px;
+  margin-left: 50px;
+	border-radius: 20px;
+	border:solid 1px white;
+}
+/* input[type=text]:focus{ background:none; outline:none; border:none; }
+input{ background:none; outline:none; border:none; } */
+input[type=text]:focus{ outline:none; font-size: 30px; text-align: center;}
+input{ outline:none;font-size: 30px; text-align: center;}
+
+.submit{
+  float:left;
+  cursor: pointer;
+  margin-top: 30px;
+  height:40px;
+  line-height: 40px;
+  font-size: 26px;
+  font-family: 'Frijole', cursive;
+  color:white;
+	border:solid 2px white;
+  width: 130px;
+  text-align: center;
+  margin-left:100px;
+}
+
+.submit:hover{
+  background-color:black;
+}
+
+.back{
+	float:right;
+  font-family: 'Fredoka One', cursive;
+	font-size:25px;
+	margin-top: 20px;
+  height:40px;
+  line-height: 40px;
+	color:white;
+	background-color:orange;
+	border:solid 2px white;
+  width: 95px;
+  text-align: center;
+  cursor:pointer;
+}
+

@@ -118,7 +118,7 @@ submitId.addEventListener('click',function(){
     var mp3 = "./sound/"+currentFruit+".mp3";
     var mp3 = new Audio(mp3);
     mp3.play();
-    // inputId.value = "";
+    inputId.value = "";
   }
 
 })
